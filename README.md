@@ -1,4 +1,4 @@
 # mediatheque_cholet
 Gestionnaire Numérique pour la ville de Cholet
 
-## Alexis, Hugo, Jeremy
+## Alexis Dessevre, Hugo, Jeremy
