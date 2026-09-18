@@ -7,6 +7,8 @@
 
 // Connexion a la base de donnees (fournit la variable $pdo)
 require_once __DIR__ . '/config/database.php';
+require_once __DIR__ . '/includes/auth.php';
+require_admin(); // seuls les administrateurs accedent au tableau de bord
 
 // --- Compter les enregistrements de chaque table ---
 // fetchColumn() retourne la premiere valeur du resultat (le compteur)
@@ -14,6 +16,7 @@ $nbLivres = $pdo->query("SELECT COUNT(*) FROM Livre")->fetchColumn();        // 
 $nbAdherents = $pdo->query("SELECT COUNT(*) FROM Adherent")->fetchColumn();  // total des adherents
 $nbExemplaires = $pdo->query("SELECT COUNT(*) FROM Exemplaire")->fetchColumn(); // total des exemplaires
 $nbEmprunts = $pdo->query("SELECT COUNT(*) FROM Emprunt")->fetchColumn();    // total des emprunts
+$nbNumeriques = $pdo->query("SELECT COUNT(*) FROM livre_num")->fetchColumn(); // total des versions numeriques
 
 // Indique au header que la page active est l'accueil (surbrillance menu)
 $currentPage = 'accueil';
@@ -34,6 +37,14 @@ require_once __DIR__ . '/includes/header.php';
         <h3>Livres</h3>                              <!-- titre du module -->
         <p>Gestion du catalogue</p>                  <!-- description -->
         <div class="card-count"><?php echo $nbLivres; ?></div> <!-- compteur dynamique -->
+    </a>
+
+    <!-- Carte Numeriques -->
+    <a href="numeriques/" class="card">
+        <div class="card-icon blue">&#128241;</div>
+        <h3>Numeriques</h3>
+        <p>Livres et ressources en ligne</p>
+        <div class="card-count"><?php echo $nbNumeriques; ?></div>
     </a>
 
     <!-- Carte Exemplaires -->
