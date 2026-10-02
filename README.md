@@ -23,7 +23,7 @@ L'application est organisee en **5 modules CRUD** complets, avec un **tableau de
 
 | Module | Description | Operations |
 |---|---|---|
-| **Livres** | Catalogue des ouvrages (titre, ISBN, classification Dewey, dates, type de support) | Ajouter / Consulter / Modifier / Supprimer |
+| **Livres** | Catalogue des ouvrages (titre, ISBN, classification Dewey (un nombre de trois chiffres minimum qui sert à ranger et retrouver les livres documentaires par sujet dans une bibliothèque), dates, type de support) | Ajouter / Consulter / Modifier / Supprimer |
 | **Numeriques** | Versions en ligne des livres (fenetre d'acces, telechargements) | Ajouter / Consulter / Modifier / Supprimer |
 | **Exemplaires** | Copies physiques d'un livre (code Dewey+Rang, etat normalise, historique des emprunts) | Ajouter / Consulter / Modifier / Supprimer |
 | **Adherents** | Inscription et suivi des membres (code, date d'adhesion, referent pour les mineurs) | Ajouter / Consulter / Modifier / Supprimer |
